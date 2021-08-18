@@ -31,4 +31,9 @@ public class CommunityService {
 
 		return communityList;
 	}
+
+	public void insertCommunity(Community community) {
+		communityMapper.insertCommunity(community);
+	}
+
 }

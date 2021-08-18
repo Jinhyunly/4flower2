@@ -40,4 +40,15 @@
 				ent_kbn = '1'
 		</select>
 
+		<insert id="insertCommunity" parameterType="com.example.demo.entity.community.Community" >
+        INSERT INTO board
+        (
+        	title, content, ent_kbn
+        )
+        VALUES
+        (
+            #{param.title}, #{param.content},'1'
+        )
+    </insert>
+
 </mapper>
