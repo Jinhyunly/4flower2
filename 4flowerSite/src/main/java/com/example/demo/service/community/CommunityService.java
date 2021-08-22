@@ -36,4 +36,12 @@ public class CommunityService {
 		communityMapper.insertCommunity(community);
 	}
 
+	public void updateCommunity(Community community) {
+		communityMapper.updateCommunity(community);
+	}
+
+	public Community selectCommunityById(int id) {
+		return communityMapper.selectCommunityById(id);
+	}
+
 }

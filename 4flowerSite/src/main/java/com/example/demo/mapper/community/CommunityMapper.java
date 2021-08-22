@@ -18,4 +18,8 @@ public interface CommunityMapper {
 
 	public void insertCommunity(@Param("param") Community community);
 
+	public void updateCommunity(@Param("param") Community community);
+
+	public Community selectCommunityById(int id);
+
 }

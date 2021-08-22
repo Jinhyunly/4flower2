@@ -12,238 +12,85 @@
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
 	<style>
-		.subject {
-		display:block;
-	  overflow: hidden;
-	  text-overflow: ellipsis;
-	  width: 100px;
-
-		}
-		.community-css{
-		margin-bottom: 0;
-		}
-		body{
-    margin-top:20px;
-    background:#eee;
-}
-/* EMAIL */
-.email {
-    padding: 20px 10px 15px 10px;
-	font-size: 1em;
-}
-
-.email .btn.search {
-	font-size: 0.9em;
-}
-
-.email h2 {
-	margin-top: 0;
-	padding-bottom: 8px;
-}
-
-.email .nav.nav-pills > li > a {
-	border-top: 3px solid transparent;
-}
-
-.email .nav.nav-pills > li > a > .fa {
-	margin-right: 5px;
-}
-
-.email .nav.nav-pills > li.active > a,
-.email .nav.nav-pills > li.active > a:hover {
-	background-color: #f6f6f6;
-	border-top-color: #3c8dbc;
-}
-
-.email .nav.nav-pills > li.active > a {
-	font-weight: 600;
-}
-
-.email .nav.nav-pills > li > a:hover {
-	background-color: #f6f6f6;
-}
-
-.email .nav.nav-pills.nav-stacked > li > a {
-	color: #666;
-	border-top: 0;
-	border-left: 3px solid transparent;
-	border-radius: 0px;
-}
-
-.email .nav.nav-pills.nav-stacked > li.active > a,
-.email .nav.nav-pills.nav-stacked > li.active > a:hover {
-	background-color: #f6f6f6;
-	border-left-color: #3c8dbc;
-	color: #444;
-}
-
-.email .nav.nav-pills.nav-stacked > li.header {
-	color: #777;
-	text-transform: uppercase;
-	position: relative;
-	padding: 0px 0 10px 0;
-}
-
-.email table {
-	font-weight: 600;
-}
-
-.email table a {
-	color: #666;
-}
-
-.email table tr.read > td {
-	background-color: #f6f6f6;
-}
-
-.email table tr.read > td {
-	font-weight: 400;
-}
-
-.email table tr td > i.fa {
-	font-size: 1.2em;
-	line-height: 1.5em;
-	text-align: center;
-}
-
-.email table tr td > i.fa-star {
-	color: #f39c12;
-}
-
-.email table tr td > i.fa-bookmark {
-	color: #e74c3c;
-}
-
-.email table tr > td.action {
-	padding-left: 0px;
-	padding-right: 2px;
-}
-
-.grid {
-    position: relative;
-    width: 100%;
+body{margin-top:20px;}
+.email-app {
+    display: flex;
+    flex-direction: row;
     background: #fff;
-    color: #666666;
-    border-radius: 2px;
-    margin-bottom: 25px;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e1e6ef;
 }
 
-
-
-.grid .grid-header:after {
-    clear: both;
+.email-app nav {
+    flex: 0 0 200px;
+    padding: 1rem;
+    border-right: 1px solid #e1e6ef;
 }
 
-.grid .grid-header span,
-.grid .grid-header > .fa {
-    display: inline-block;
-    margin: 0;
-    font-weight: 300;
-    font-size: 1.5em;
-    float: left;
+.email-app nav .btn-block {
+    margin-bottom: 15px;
 }
 
-.grid .grid-header span {
-    padding: 0 5px;
+.email-app nav .nav {
+    flex-direction: column;
 }
 
-.grid .grid-header > .fa {
-    padding: 5px 10px 0 0;
+.email-app nav .nav .nav-item {
+    position: relative;
 }
 
-.grid .grid-header > .grid-tools {
-    padding: 4px 10px;
+.email-app nav .nav .nav-item .nav-link,
+.email-app nav .nav .nav-item .navbar .dropdown-toggle,
+.navbar .email-app nav .nav .nav-item .dropdown-toggle {
+    color: #151b1e;
+    border-bottom: 1px solid #e1e6ef;
 }
 
-.grid .grid-header > .grid-tools a {
-    color: #999999;
-    padding-left: 10px;
-    cursor: pointer;
+.email-app nav .nav .nav-item .nav-link i,
+.email-app nav .nav .nav-item .navbar .dropdown-toggle i,
+.navbar .email-app nav .nav .nav-item .dropdown-toggle i {
+    width: 20px;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    text-align: center;
 }
 
-.grid .grid-header > .grid-tools a:hover {
-    color: #666666;
+.email-app nav .nav .nav-item .nav-link .badge,
+.email-app nav .nav .nav-item .navbar .dropdown-toggle .badge,
+.navbar .email-app nav .nav .nav-item .dropdown-toggle .badge {
+    float: right;
+    margin-top: 4px;
+    margin-left: 10px;
 }
 
-.grid .grid-body {
-    padding: 15px 20px 15px 20px;
-    font-size: 0.9em;
-    line-height: 1.9em;
+@media (max-width: 991px) {
+    .email-app {
+        flex-direction: column;
+    }
+    .email-app nav {
+        flex: 0 0 100%;
+    }
 }
-
-.grid .full {
-    padding: 0 !important;
+/**
+@media (max-width: 767px) {
+    .email-app {
+        flex-direction: column;
+    }
+    .email-app nav {
+        flex: 0 0 100%;
+    }
 }
+*/
 
-.grid .transparent {
-    box-shadow: none !important;
-    margin: 0px !important;
-    border-radius: 0px !important;
-}
-
-.grid.top.black > .grid-header {
-    border-top-color: #000000 !important;
-}
-
-.grid.bottom.black > .grid-body {
-    border-bottom-color: #000000 !important;
-}
-
-.grid.top.blue > .grid-header {
-    border-top-color: #007be9 !important;
-}
-
-.grid.bottom.blue > .grid-body {
-    border-bottom-color: #007be9 !important;
-}
-
-.grid.top.green > .grid-header {
-    border-top-color: #00c273 !important;
-}
-
-.grid.bottom.green > .grid-body {
-    border-bottom-color: #00c273 !important;
-}
-
-.grid.top.purple > .grid-header {
-    border-top-color: #a700d3 !important;
-}
-
-.grid.bottom.purple > .grid-body {
-    border-bottom-color: #a700d3 !important;
-}
-
-.grid.top.red > .grid-header {
-    border-top-color: #dc1200 !important;
-}
-
-.grid.bottom.red > .grid-body {
-    border-bottom-color: #dc1200 !important;
-}
-
-.grid.top.orange > .grid-header {
-    border-top-color: #f46100 !important;
-}
-
-.grid.bottom.orange > .grid-body {
-    border-bottom-color: #f46100 !important;
-}
-
-.grid.no-border > .grid-header {
-    border-bottom: 0px !important;
-}
-
-.grid.top > .grid-header {
-    border-top-width: 4px !important;
-    border-top-style: solid !important;
-}
-
-.grid.bottom > .grid-body {
-    border-bottom-width: 4px !important;
-    border-bottom-style: solid !important;
+@media (max-width: 575px) {
+    .email-app .message .header {
+        flex-flow: row wrap;
+    }
+    .email-app .message .header .date {
+        flex: 0 0 100%;
+    }
 }
 	</style>
+
   <!--
 	//////////////////////////////////////////////////////
 
@@ -293,7 +140,11 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	<script>
+	function goBack() {
+		  window.history.back();
+		}
+	</script>
 	</head>
 	<body>
 	<div class="box-wrap">
@@ -324,38 +175,35 @@
 		</header>
 		<hr>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container">
-<div class="row">
-	<!-- BEGIN INBOX -->
-	<div class="col-md-12">
-		<div class="grid email">
-			<div class="grid-body">
-				<div class="row">
-					<!-- BEGIN INBOX MENU -->
-					<div class="col-md-3">
-					 	<form autocomplete="off" action="#" th:action="@{/community/insert}">
-						<h2 class="grid-title"><i class="fa fa-inbox"></i>Community</h2>
-						<!-- <a class="btn btn-block btn-primary" data-toggle="modal" data-target="#compose-modal"><i class="fa fa-pencil"></i>&nbsp;&nbsp;NEW WRITE</a> -->
-						<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-pencil"></i>&nbsp;&nbsp;NEW WRITE</button>
-						<hr>
+<div class="container bootdey">
+<div class="email-app">
+    <nav>
+		    <form autocomplete="off" action="#" th:action="@{/community/insert}">
+        <!-- <a href="#" class="btn btn-danger btn-block">New Email</a> -->
+        <ul class="nav">
+        		<h3 class="grid-title"><i class="fa fa-inbox"></i>Community</h3>
+        		<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-pencil"></i>&nbsp;&nbsp;NEW WRITE</button>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-inbox"></i> Inbox <span class="badge badge-danger">4</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-star"></i> Stared</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-rocket"></i> Sent</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-trash-o"></i> Trash</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fa fa-bookmark"></i> Important</a>
+            </li>
+        </ul>
+        </form>
+    </nav>
 
-						<div>
-							<ul class="nav nav-pills nav-stacked">
-								<li class="header">Folders</li>
-								<li class="active"><a href="#"><i class="fa fa-inbox"></i> Inbox (14)</a></li>
-								<li><a href="#"><i class="fa fa-star"></i> Starred</a></li>
-								<li><a href="#"><i class="fa fa-bookmark"></i> Important</a></li>
-								<li><a href="#"><i class="fa fa-mail-forward"></i> Sent</a></li>
-								<li><a href="#"><i class="fa fa-pencil-square-o"></i> Drafts</a></li>
-								<li><a href="#"><i class="fa fa-folder"></i> Spam (217)</a></li>
-							</ul>
-						</div>
-					</div>
-					</form>
-					<!-- END INBOX MENU -->
 
-					<!-- BEGIN INBOX CONTENT -->
-					<div class="col-md-9">
+    <div class="col-md-9">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="btn-group">
@@ -387,16 +235,28 @@
 
 						<div class="padding"></div>
 
-						<div th:each="community:${communityList}" class="table-responsive" style="margin:0; border:0;">
+						<div class="table-responsive" style="margin:0; border:0;">
 							<table class="table">
+								<thead>
+									<tr>
+										<th width="100px">#</th>
+										<th width="250px">Title</th>
+										<th width="150px">author</th>
+										<th width="150px">addDate</th>
+										<th width="50px">views</th>
+									</tr>
+								</thead>
 								<tbody>
-								<tr>
-									<td class="action"><input type="checkbox" /></td>
+								<tr th:each="community,iter:${communityList}">
+									<!-- <td class="action"><input type="checkbox" /></td>
 									<td class="action"><i class="fa fa-star-o"></i></td>
 									<td class="action"><i class="fa fa-bookmark-o"></i></td>
-									<td class="name"><a href="#">[[${community.title}]]</a></td>
-									<td><div class="subject">[[${community.content}]]ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasdasdas</div></td>
+									 -->
+									<td class="action">[[${community.id}]]</td>
+									<td class="name"><a th:href="@{'/community/detail/'+${community.id}+'&'+${params.currentPageNo}}">[[${community.title}]]</a></td>
+									<td><div class="subject">[[${community.content}]]</div></td>
 									<td class="name">[[${community.add_date}]]</td>
+									<td class="name">[[${params.currentPageNo}]]</td>
 								</tr>
 								</tbody>
 							</table>
@@ -414,60 +274,21 @@
 						</ul>
 						 -->
 					</div>
-					<!-- END INBOX CONTENT -->
+
+</div>
+</div>
 					<th:block layout:fragment="paging">
 						<nav th:replace="fragments/common :: pagination"></nav>
 					</th:block>
 
+
 					<!-- BEGIN COMPOSE MESSAGE -->
-					<div class="modal fade" id="compose-modal" tabindex="-1" role="dialog" aria-hidden="true">
-						<div class="modal-wrapper">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header bg-blue">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-										<h4 class="modal-title"><i class="fa fa-envelope"></i> Compose New Message</h4>
-									</div>
-									<form action="#" method="post">
-										<div class="modal-body">
-											<div class="form-group">
-												<input name="to" type="email" class="form-control" placeholder="To">
-											</div>
-											<div class="form-group">
-												<input name="cc" type="email" class="form-control" placeholder="Cc">
-											</div>
-											<div class="form-group">
-												<input name="bcc" type="email" class="form-control" placeholder="Bcc">
-											</div>
-											<div class="form-group">
-												<input name="subject" type="email" class="form-control" placeholder="Subject">
-											</div>
-											<div class="form-group">
-												<textarea name="message" id="email_message" class="form-control" placeholder="Message" style="height: 120px;"></textarea>
-											</div>
-											<div class="form-group">														<input type="file" name="attachment">
-											</div>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Discard</button>
-											<button type="submit" class="btn btn-primary pull-right"><i class="fa fa-envelope"></i> Send Message</button>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
+
 					<!-- END COMPOSE MESSAGE -->
 				</div>
-			</div>
-		</div>
-	</div>
 	<!-- END INBOX -->
-</div>
-</div>
 <!--/row-->
 		<footer th:replace="fragments/footer :: footerFragment"></footer>
-	</div>
 	<!-- END: box-wrap -->
 
 	<!-- jQuery -->
@@ -485,7 +306,6 @@
 
 	<!-- Main JS (Do not remove) -->
 	<script th:src="@{/static/js/main.js}"></script>
-
 	<script th:inline="javascript">
 		/*<![CDATA[*/
 

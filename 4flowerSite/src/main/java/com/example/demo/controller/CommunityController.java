@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.security.Principal;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -94,7 +96,13 @@ public class CommunityController {
 		}catch(Exception e) {
 		}
 
-		communityService.insertCommunity(params);
+		if(params.getId() == 0) {
+			//insert
+			communityService.insertCommunity(params);
+		}else {
+			//update
+			communityService.updateCommunity(params);
+		}
 
 
 
@@ -108,6 +116,64 @@ public class CommunityController {
 
 
 		return modelAndView;
+	}
+
+	@GetMapping("/community/detail/{id}&{pageNum}")
+	public ModelAndView communityDetailGet(@PathVariable("id") String id,@PathVariable("pageNum") String pageNum, HttpServletRequest request,Principal principal) throws Exception{
+
+		ModelAndView modelAndView = new ModelAndView();
+
+		try{
+			Authentication authentication = (Authentication) principal;
+			MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
+			UserInfo userInfo = userDetails.getUserInfo();
+			modelAndView.addObject("userName", userInfo.getUserName());
+
+			if("momo".equals(userInfo.getLoginId())){
+				modelAndView.addObject("userId", userInfo.getLoginId());
+			}
+		}catch(Exception e){
+
+		}
+
+		Community community = communityService.selectCommunityById(Integer.parseInt(id));
+
+		community.setCurrentPageNo(Integer.parseInt(pageNum));
+		modelAndView.addObject("community", community);
+
+		modelAndView.setViewName("communityDetail");
+
+		return modelAndView;
+
+	}
+
+	@GetMapping("/community/update/{id}")
+	public ModelAndView communityUpdateGet(@PathVariable("id") String id,@Valid Community community, HttpServletRequest request,Principal principal) throws Exception{
+
+		ModelAndView modelAndView = new ModelAndView();
+
+		try{
+			Authentication authentication = (Authentication) principal;
+			MyUserDetails userDetails = (MyUserDetails) authentication.getPrincipal();
+			UserInfo userInfo = userDetails.getUserInfo();
+			modelAndView.addObject("userName", userInfo.getUserName());
+
+			if("momo".equals(userInfo.getLoginId())){
+				modelAndView.addObject("userId", userInfo.getLoginId());
+			}
+		}catch(Exception e){
+
+		}
+
+//		Community community2 = communityService.selectCommunityById(Integer.parseInt(id));
+
+//		community.setCurrentPageNo(Integer.parseInt(pageNum));
+		modelAndView.addObject("community", community);
+
+		modelAndView.setViewName("communityWrite");
+
+		return modelAndView;
+
 	}
 
 

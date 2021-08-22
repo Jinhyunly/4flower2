@@ -9,7 +9,7 @@
 			, title
 			, content
 			, user_id
-			, add_date
+			, DATE_FORMAT(add_date,'%Y/%m/%d') AS 'add_date'
 			, add_torcd
 			, update_date
 			, update_torcd
@@ -50,5 +50,26 @@
             #{param.title}, #{param.content},'1'
         )
     </insert>
+
+
+    <update id="updateCommunity" parameterType="com.example.demo.entity.community.Community" >
+        UPDATE board
+        SET
+	        update_date = NOW()
+					, title = #{param.title}
+					, content = #{param.content}
+					, user_id = #{param.user_id}
+				WHERE
+					id = #{param.id}
+    </update>
+
+    <select id="selectCommunityById" parameterType="Integer" resultType="com.example.demo.entity.community.Community">
+        SELECT
+        	<include refid="communityColumns" />
+        FROM
+        	board
+        WHERE
+        	id = #{id}
+    </select>
 
 </mapper>
