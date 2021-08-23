@@ -236,13 +236,13 @@ body{margin-top:20px;}
 						<div class="padding"></div>
 
 						<div class="table-responsive" style="margin:0; border:0;">
-							<table class="table">
+							<table class="table" style="table-layout: fixed">
 								<thead>
 									<tr>
-										<th width="100px">#</th>
-										<th width="250px">Title</th>
-										<th width="150px">author</th>
-										<th width="150px">addDate</th>
+										<th width="50px">#</th>
+										<th width="100px">Title</th>
+										<th width="100px">author</th>
+										<th width="100px">addDate</th>
 										<th width="50px">views</th>
 									</tr>
 								</thead>
@@ -254,7 +254,7 @@ body{margin-top:20px;}
 									 -->
 									<td class="action">[[${community.id}]]</td>
 									<td class="name"><a th:href="@{'/community/detail/'+${community.id}+'&'+${params.currentPageNo}}">[[${community.title}]]</a></td>
-									<td><div class="subject">[[${community.content}]]</div></td>
+									<td style="overflow:hidden; text-overflow:ellipsis;"><div class="subject">[[${community.content}]]</div></td>
 									<td class="name">[[${community.add_date}]]</td>
 									<td class="name">[[${params.currentPageNo}]]</td>
 								</tr>
