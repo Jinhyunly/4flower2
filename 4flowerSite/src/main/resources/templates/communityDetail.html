@@ -334,22 +334,22 @@ body{margin-top:20px;}
     <main>
         <p class="text-center">New Write</p>
         <form th:action="@{'/community/update/'+${community.id}}" th:object="${community}" method="get">
-       	<div class="row">
+				<div class="row">
             <div class="col-sm-11 ml-auto">
                 <div class="form-group mb-3">
                 <label for="bcc" class="col-2 col-sm-1 col-form-label">TITLE</label>
-            		</div>
+                    <input type="text" th:field="*{title}" class="form-control" id="to" style="border: none" readonly>
+                </div>
             </div>
         </div>
-        <label for="bcc" class="col-2 col-sm-1 col-form-label" th:text="*{title}"></label>
         <div class="row">
             <div class="col-sm-11 ml-auto">
                 <div class="form-group mb-3">
                 <label for="bcc" class="col-2 col-sm-1 col-form-label">CONTENT</label>
+                    <textarea class="form-control" th:field="*{content}" id="message" name="body" rows="12" style="border: none; resize: none;" readonly></textarea>
                 </div>
             </div>
         </div>
-        <label for="bcc" class="col-2 col-sm-1 col-form-label" th:text="*{content}"></label>
         <div class="row">
         	<div class="col-sm-11 ml-auto">
 	        	<div class="form-group mb-3">
@@ -361,7 +361,6 @@ body{margin-top:20px;}
                     <button type="submit" class="btn btn-danger">Discard</button>
                      -->
                 </div>
-
 	          </div>
         	</div>
         </div>
