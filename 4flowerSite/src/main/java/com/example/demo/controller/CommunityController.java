@@ -74,8 +74,8 @@ public class CommunityController {
 //		modelAndView.setViewName("community");
 
 //		modelAndView.addObject("community", new Community());
-		modelAndView.setViewName("communityWrite");
 
+		modelAndView.setViewName("communityWrite");
 
 		System.out.println("community controller start");
 		return modelAndView;
@@ -104,18 +104,7 @@ public class CommunityController {
 			communityService.updateCommunity(params);
 		}
 
-
-
-//		List<Community> communityList = communityService.selectAllCommunity(params);
-//		modelAndView.addObject("communityList", communityList);
-//
-//		modelAndView.setViewName("community");
-		List<Community> communityList = communityService.selectAllCommunity(params);
-		modelAndView.addObject("communityList", communityList);
-		modelAndView.setViewName("community");
-
-
-		return modelAndView;
+		return new ModelAndView("redirect:/community");
 	}
 
 	@GetMapping("/community/detail/{id}&{pageNum}")
