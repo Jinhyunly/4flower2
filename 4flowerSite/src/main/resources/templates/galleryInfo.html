@@ -80,7 +80,7 @@
 							<ul class="nav text-center">
 								<li class=""><a href="/"><span>Home</span></a></li>
 								<li><a href="/gallery">gallery</a></li>
-								<li><a href="/shop">shop</a></li>
+								<li><a href="/notice">community</a></li>
 								<!--
 								<li><a href="about.html">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
@@ -107,7 +107,8 @@
 					<div class="row">
 			      	<label for="galleryTitle">[[${file.gallery_title}]]</label>
 			      	<!-- <label for="exampleInputEmail1">[[${file.gallery_fileName}]]</label> -->
-			      	<a class="btn btn-info btn-block " th:href="@{/gallery}"><span>Back</span></a>
+			      	<br>
+			      	<a class="btn btn-info  " th:href="@{/gallery}"><span>Back</span></a>
 							<!--<form th:if="${userId != null}" th:action="@{/gallery/{id}(id=${file.gallery_id})}" th:method="delete">-->
 							<form th:if="${userId != null}" th:action="@{'/gallery/'+${file.gallery_id}}" method="post">
 			      		<button class="btn btn-warning btn-block" type="submit" value="delete">Delete</button>

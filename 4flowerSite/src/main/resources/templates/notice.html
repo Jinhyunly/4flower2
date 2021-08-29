@@ -89,6 +89,7 @@ body{margin-top:20px;}
         flex: 0 0 100%;
     }
 }
+
 .active_menu {
 	background-color: #f6f6f6;
 	border-top-color: #3c8dbc;
@@ -167,7 +168,7 @@ body{margin-top:20px;}
 							<ul class="nav text-center">
 								<li><a href="/"><span>Home</span></a></li>
 								<li><a href="/gallery">gallery</a></li>
-								<li class="active"><a href="/community">community</a></li>
+								<li class="active"><a href="/notice">community</a></li>
 								<!--
 								<li><a href="about.html">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
@@ -186,11 +187,11 @@ body{margin-top:20px;}
         <ul class="nav">
         		<!-- <h3 class="grid-title"><i class="fa fa-user"></i>Community</h3> -->
         		<!-- <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-pencil"></i>&nbsp;&nbsp;NEW WRITE</button> -->
-            <li class="nav-item">
-                <a class="nav-link" href="/notice"><i class="fa fa-book"></i> Notice <span class="badge badge-danger">4</span></a>
+            <li class="nav-item active_menu">
+                <a class="nav-link" href="/notice"><i class="fa fa-book"></i> Notice</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active_menu" href="/community"><i class="fa fa-users"></i> Community</a>
+                <a class="nav-link" href="/community"><i class="fa fa-users"></i> Community</a>
             </li>
             <!--
             <li class="nav-item">
@@ -226,7 +227,7 @@ body{margin-top:20px;}
 								</div>
 							</div>
 								-->
-							<form autocomplete="off" action="#" th:action="@{/community/insert}">
+							<form autocomplete="off" action="#" th:action="@{/notice/insert}">
 								<button type="submit" class="btn btn-primary"><i class="fa fa-pencil"></i>&nbsp;WRITE</button>
 							</form>
 							<!--
@@ -257,15 +258,15 @@ body{margin-top:20px;}
 									</tr>
 								</thead>
 								<tbody>
-								<tr th:each="community,iter:${communityList}">
+								<tr th:each="notice,iter:${noticeList}">
 									<!-- <td class="action"><input type="checkbox" /></td>
 									<td class="action"><i class="fa fa-star-o"></i></td>
 									<td class="action"><i class="fa fa-bookmark-o"></i></td>
 									 -->
-									<td class="action">[[${community.id}]]</td>
-									<td class="name"><a th:href="@{'/community/detail/'+${community.id}+'&'+${params.currentPageNo}}">[[${community.title}]]</a></td>
-									<td style="overflow:hidden; text-overflow:ellipsis;"><div class="subject">[[${community.content}]]</div></td>
-									<td class="name">[[${community.add_date}]]</td>
+									<td class="action">[[${notice.id}]]</td>
+									<td class="name"><a th:href="@{'/notice/detail/'+${notice.id}+'&'+${params.currentPageNo}}">[[${notice.title}]]</a></td>
+									<td style="overflow:hidden; text-overflow:ellipsis;"><div class="subject">[[${notice.content}]]</div></td>
+									<td class="name">[[${notice.add_date}]]</td>
 									<td class="name">[[${params.currentPageNo}]]</td>
 								</tr>
 								</tbody>
@@ -288,7 +289,7 @@ body{margin-top:20px;}
 </div>
 </div>
 					<th:block layout:fragment="paging">
-						<nav th:replace="fragments/common :: pagination"></nav>
+						<nav th:replace="fragments/noticeCommon :: pagination"></nav>
 					</th:block>
 
 
